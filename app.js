@@ -190,17 +190,27 @@ console.log("Benefitnya Adalah : " + pelanggan_c_benefit);
 // TODO 6A:
 // Buat variabel Array bernama "menuRekomendasi" yang berisi minimal 5 nama menu kopi/makanan.
 
+let menu_rekomendasi = [
+    "Butterscotch sea salt latte", 
+    "Salt Caramel", 
+    "Cookies & Cream", 
+    "Mix PLatter", 
+    "Pisang Goreng" 
+];
 
-
+console.log("Daftar Menu Rekomendasi " + nama_kedai + " : ")
 
 // TODO 6B:
 // Gunakan perulangan "for loop" untuk mencetak setiap menu ke Console dengan format:
 // "1. Nama Menu", "2. Nama Menu", dst. Gunakan (i + 1) untuk nomor urutnya.
 
-
-
+for (let i = 0; i < menu_rekomendasi.length; i++) {
+    console.log((i + 1) + ". " + menu_rekomendasi[i]);
+}
 
 // TODO 6C:
 // Cetak jumlah total menu di akhir daftar menggunakan properti ".length".
 // Akhiri program dengan: console.log("=== TUGAS MANDIRI SELESAI DENGAN SUKSES! ===");
 
+console.log("total_menu : " + menu_rekomendasi.length + " Menu")
+console.log("Tugas Mandiri Selesai")
