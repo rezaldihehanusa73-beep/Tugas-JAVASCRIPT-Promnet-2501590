@@ -44,7 +44,7 @@ const nama_kedai = "Kopi PSTI Kampus";
 let nama_kasir = "Kak Eko";
 let shift_kerja = "Pagi";
 
-console.log("Kedai : " + nama_kedai);
+console.log("Nama Kedai : " + nama_kedai);
 console.log("Nama Kasir : " + nama_kasir);
 console.log("Shift : " + shift_kerja);
 
@@ -71,12 +71,12 @@ let nama_pelanggan = prompt("Halo! Masukkan Nama Kamu Untuk Memulai : ");
 if (nama_pelanggan) {
     // Jika user mengisi nama
     alert("Halo, " + nama_pelanggan + "! Selamat datang di Kedai Kopi PSTI.");
-    console.log("Pelanggan yang aktif: " + nama_pelanggan);
+    console.log("Nama Pelanggan : " + nama_pelanggan);
 } else {
     // Jika user tidak mengisi nama atau menekan Cancel
     nama_pelanggan = "Pelanggan Setia";
     alert("Kamu tidak memasukkan nama. Kamu akan dipanggil " + nama_pelanggan + ".");
-    console.log("Pelanggan yang aktif: " + nama_pelanggan);
+    console.log("Nama Pelanggan : " + nama_pelanggan);
 }
 
 // ============================================================
@@ -135,11 +135,13 @@ if (jumlah_poin >= 100) {
     benefit = "Member Reguler (kumpulkan poin untuk naik tier)";
 }
 
-console.log("Tier Member : " + tier_member + " - " + benefit);
+console.log("Tier Member : " + tier_member);
+console.log("Benefit : " + benefit)
 alert(
     "Nama Pelanggan : " + nama_pelanggan +  "\n" +
     "Jumlah Poin : " + jumlah_poin + "\n" +
-    "Tier : " + tier_member +" (" + benefit + ")"
+    "Tier : " + tier_member + "\n" +
+    "Benefit : " + benefit
 );
 
 // ============================================================
@@ -161,10 +163,10 @@ function hitung_jumlah(p1, p2, p3) {
 
 function tentukan_tiermember(poin) {
     //Setiap baris "if" untuk menentukan benefit
-    if (poin >= 100) return "Platinum - Diskon 20% + Gratis 1 Minuman Signature";
-    if (poin >= 70) return "Gold - Diskon 10% di setiap transaksi";
-    if (poin >= 40) return "Silver - Diskon 5% untuk menu minuman";
-    return "Bronze - Member Reguler (kumpulkan poin untuk naik tier)";
+    if (poin >= 100) return "Tier : Platinum\nBenefitnya adalah : Diskon 20% + Gratis 1 Minuman Signature";
+    if (poin >= 70) return "Tier : Gold\nBenefitnya adalah : Diskon 10% di setiap transaksi";
+    if (poin >= 40) return "Tier : Silver\nBenefitnya adalah : Diskon 5% untuk menu minuman";
+    return "Tier : Bronze\nBenefitnya adalah : Member Reguler (kumpulkan poin untuk naik tier)";
 }
 
 // TODO 5C:
@@ -178,10 +180,10 @@ let pelanggan_c = hitung_jumlah(15, 10, 5);
 let pelanggan_b_benefit = tentukan_tiermember(pelanggan_b);
 let pelanggan_c_benefit = tentukan_tiermember(pelanggan_c);
 
-console.log("Total Poin Pelanggan B : " + pelanggan_b);
-console.log("Benefitnya Adalah : " + pelanggan_b_benefit);
-console.log("Total Poin Pelanggan C : " + pelanggan_c);
-console.log("Benefitnya Adalah : " + pelanggan_c_benefit);
+console.log("Total Poin Pelanggan B Adalah : " + pelanggan_b);
+console.log(pelanggan_b_benefit);
+console.log("Total Poin Pelanggan C Adalah : " + pelanggan_c);
+console.log(pelanggan_c_benefit);
 
 // ============================================================
 // AKTIVITAS 6: Array & For Loop — Daftar Menu Rekomendasi
