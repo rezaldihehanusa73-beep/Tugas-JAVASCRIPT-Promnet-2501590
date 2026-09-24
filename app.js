@@ -114,8 +114,33 @@ console.log("Jumlah poin kamu adalah : " + jumlah_poin);
 // 3. Cetak hasil tierMember dan benefit ke Console.
 // 4. Tampilkan ringkasan hasil member (nama, total poin, tier, benefit) via dialog alert().
 
+let tier_member ="";
+let benefit ="";
 
+if (jumlah_poin >= 100) {
+    //kondisi yang pertama kali di cek apakah nilainya memenuhi
+    tier_member = "Platinum";
+    benefit = "Diskon 20% + Gratis 1 Minuman Signature";
+} else if (jumlah_poin >= 70) {
+    // Kondisi kedua jika kondisi pertama tidak terpenuhi
+    tier_member = "Gold";
+    benefit = "Diskon 10% di setiap transaksi";
+} else if (jumlah_poin >= 40) {
+    // Kondisi ketiga jika kondisi kedua tidak terpenuhi
+    tier_member = "Silver";
+    benefit = "Diskon 5% untuk menu minuman";
+} else {
+    // Jika semua kondisi di atas tidak terpenuhi maka rata-rata < 70
+    tier_member = "Bronze";
+    benefit = "Member Reguler (kumpulkan poin untuk naik tier)";
+}
 
+console.log("Tier Member : " + tier_member + " - " + benefit);
+alert(
+    "Nama Pelanggan : " + nama_pelanggan +  "\n" +
+    "Jumlah Poin : " + jumlah_poin + "\n" +
+    "Tier : " + tier_member +" (" + benefit + ")"
+);
 
 // ============================================================
 // AKTIVITAS 5: Function — Membuat Fungsi yang Bisa Dipakai Ulang
@@ -125,15 +150,22 @@ console.log("Jumlah poin kamu adalah : " + jumlah_poin);
 // Buat fungsi "hitungTotalPoin(p1, p2, p3)" yang menerima 3 parameter nilai poin,
 // menjumlahkannya, dan mengembalikan (return) nilai total penjumlahannya.
 
-
-
+function hitung_jumlah(p1, p2, p3) {
+    let jumlah = p1 + p2 + p3;
+    return jumlah;
+}
 
 // TODO 5B:
 // Buat fungsi "tentukanTierMember(poin)" yang menerima 1 parameter nilai poin,
 // dan mengembalikan (return) string nama tier beserta keterangannya.
 
-
-
+function tentukan_tiermember(poin) {
+    //Setiap baris "if" untuk menentukan benefit
+    if (poin >= 100) return "Platinum - Diskon 20% + Gratis 1 Minuman Signature";
+    if (poin >= 70) return "Gold - Diskon 10% di setiap transaksi";
+    if (poin >= 40) return "Silver - Diskon 5% untuk menu minuman";
+    return "Bronze - Member Reguler (kumpulkan poin untuk naik tier)";
+}
 
 // TODO 5C:
 // Buktikan bahwa fungsi di atas bisa dipakai ulang (reusable):
@@ -141,8 +173,15 @@ console.log("Jumlah poin kamu adalah : " + jumlah_poin);
 // 2. Hitung total poin dan tentukan tier untuk simulasi Pelanggan C (misal poin: 15, 10, 5).
 // 3. Cetak data Pelanggan B dan C ke tab Console.
 
+let pelanggan_b = hitung_jumlah(35, 25, 20);
+let pelanggan_c = hitung_jumlah(15, 10, 5);
+let pelanggan_b_benefit = tentukan_tiermember(pelanggan_b);
+let pelanggan_c_benefit = tentukan_tiermember(pelanggan_c);
 
-
+console.log("Total Poin Pelanggan B : " + pelanggan_b);
+console.log("Benefitnya Adalah : " + pelanggan_b_benefit);
+console.log("Total Poin Pelanggan C : " + pelanggan_c);
+console.log("Benefitnya Adalah : " + pelanggan_c_benefit);
 
 // ============================================================
 // AKTIVITAS 6: Array & For Loop — Daftar Menu Rekomendasi
